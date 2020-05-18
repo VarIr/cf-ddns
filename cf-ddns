@@ -264,7 +264,7 @@ def main():
     domain = None
 
     for name in args.name:
-        if "." not in name or name.count(".") != 2:
+        if "." not in name or not name.count("."):
             raise ValueError("{} is not a valid hostname".format(args.name))
         else:
             _domain = ".".join(name.split(".")[-2:])
